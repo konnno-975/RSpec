@@ -10,4 +10,16 @@ RSpec.describe User, type: :model do
     )
     expect(user.full_name).to eq "太郎 佐藤"
   end
+
+  it "苗字が侍の場合 侍 太郎となること" do
+    user = User.new(
+      last_name:  "侍",
+      first_name: "太郎"
+    )
+    expect(user.full_name).to eq "侍 太郎"
+  end
+
+  it "四則演算" do
+    expect(1+1).to eq 2
+  end
 end
